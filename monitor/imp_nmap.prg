@@ -64,7 +64,7 @@ PROCEDURE imp_nmap( ... )
         cExec := cComando + " " + alltrim(field->prefixoip) + "." + alltrim(field->octeto4)
 
         EXEC cExec TO cSucesso ERROR cFalha ERRORLEVEL nErrorLevel
-        ? aLine[x] 
+        ? cExec
         cResultado += Replicate("*", 20) + hb_eol()
         cResultado += cExec  + hb_eol()
         
