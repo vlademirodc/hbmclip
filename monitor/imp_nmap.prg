@@ -61,7 +61,7 @@ PROCEDURE imp_nmap( ... )
             LOOP
         ENDIF
         //"ping -c 4 -I enp0s25 "
-        cExec := cComando + " " + alltrim(field->previxoip) + "." + alltrim(field->octeto4)
+        cExec := cComando + " " + alltrim(field->prefixoip) + "." + alltrim(field->octeto4)
 
         EXEC cExec TO cSucesso ERROR cFalha ERRORLEVEL nErrorLevel
         ? aLine[x] 
