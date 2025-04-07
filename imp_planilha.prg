@@ -72,12 +72,11 @@ RETURN
 STATIC PROCEDURE Hbm_Help( cPrintParams )
 
     hb_Default( @cPrintParams , "")
-    ? "Objective : "
+    ? "Objective : Importar um arquivo (.csv) para posterior processamento"
     ?
     ? "Parameters standard"
     ? "--help    This help (script) "
     ? "--?       Help " + ExeName() + " (executable) "
-    ? "--virtual-include : embedded ch files "
     IF .NOT. EMPTY( cPrintParams )
         ? cPrintParams
     ENDIF
