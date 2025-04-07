@@ -73,8 +73,8 @@ PROCEDURE imp_nmap( ... )
             ?? " - (FAILLED)"
             cResultado += cFalha + hb_eol()
         ENDIF
-    
-    NEXT
+        skip
+    enddo
     MemoWrit( "nmap.log" , cResultado )
     ? 
     SHELL RETURN "[DONE]"
