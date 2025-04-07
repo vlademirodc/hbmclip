@@ -1,7 +1,7 @@
 #!/usr/local/bin/hbmclip
 #include "inkey.ch"
 **********************************************
-* Name  : import_tsv
+* Name  : imp_planilha.prg
 * Date  : 2025-04-07 - 14:42:10
 * Notes : 
 /*
@@ -47,14 +47,14 @@ PROCEDURE import_tsv( ... )
     //SHELL DEBUG aData // Debug
 
     /* Insert your code here */
-    IF FILE( "planilha.txt" )
+    IF FILE( "planilha.csv" )
         aFields := { ;
             { "DESCRICAO" , "C" , 210 , 0 } , ;
             { "PREFIXOIP" , "C" , 20 , 0 } , ;
             { "OCTETO4" , "C" , 3 , 0 }  }
         dbCreate( "planilha" , aFields )
         use planilha
-        append from planilha.txt FIELDS DESCRICAO, PREFIXOIP, OCTETO4 DELIMITED WITH ","
+        append from planilha.csv FIELDS DESCRICAO, PREFIXOIP, OCTETO4 DELIMITED WITH ","
         
         
     ELSE
