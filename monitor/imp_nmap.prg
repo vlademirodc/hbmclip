@@ -51,6 +51,8 @@ PROCEDURE imp_nmap( ... )
     cComando := "nmap -e enp0s25 -p- "
     if file("planilha.dbf")
         use planilha shared
+    else
+        SHELL RETURN ERROR "Arquivo planilha.dbf não existe" 
     endif
     
     do while .not. eof()
