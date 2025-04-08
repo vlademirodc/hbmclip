@@ -5,12 +5,22 @@
 * Date  : 2025-04-07 - 14:42:10
 * Notes : 
 /*
-   1. 
-   2. 
+   O objetivo desse programa é importar um arquivo (.csv) 
+que foi gerado previamente a partir do google planilhas.
+   A sequência geral do trabalho é:
+   1. Fazer o download da planilha no formato (.csv)
+   2. Executar esse programa
+
+   Esse arquivo contém a lista de máquinas ativas de uma 
+determinada rede. O arquivo possui várias colunas, mas 
+usaremos apenas as três primeiras colunas:
+   (a) Descrição do endpoint (computador ou dispositivo de rede)
+   (b) Os 3 primeiros octetos de um endereço IPv4
+   (c) O último octeto de um endereço IPv4
 */
 ***********************************************
 #include 'hbmediator.ch' // virtual include file
-PROCEDURE import_tsv( ... )
+PROCEDURE imp_planilha( ... )
     MODULE SHELL
 
     LOCAL hParams , aData, cPrintParams 
