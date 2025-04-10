@@ -55,12 +55,14 @@ PROCEDURE download_csv( ... )
     ENDIF      
 
     lOverwrite := .t.
-    cFilename := "planilha.csv"
+    cFilename := VLJ_ConfigJson2Value( "local.json" , "download_csv.sheetname" , "planilha.csv" )
     cMessage := NIL 
     IF VLJ_Download( cRemoteFile , lOverwrite , cFileName , cMessage )
     ELSE
         SHELL RETURN ERROR cMessage ERRORCODE 230     
     ENDIF
+    SHELL RETURN "Success. CSV imported in " + cFilename
+
     **************************************Return Message Templates*****************************
     * SHELL RETURN ERROR <cReturn> [ERRORCODE <nCode>] // error
     * SHELL RETURN <cReturn> [AS ARRAY>] // success
