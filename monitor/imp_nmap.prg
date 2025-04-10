@@ -48,7 +48,7 @@ PROCEDURE imp_nmap( ... )
 
     /* Insert your code here */
     cResultado := "" 
-    cComando := "nmap -e enp0s25 -p- "
+    cComando := "nmap " //"nmap -e enp0s25 -p- "
     if file("planilha.dbf")
         use planilha shared
     else
